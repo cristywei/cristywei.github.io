@@ -1,1 +1,341 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+<link rel="shortcut icon" href="{Favicon}" />
+
+<meta name="image:Icon" content="" />
+<meta name="image:Background" content="" />
+
+<meta name="color:Background" content="#f6f6f6" />
+<meta name="color:Sidebar" content="#fff" />
+<meta name="color:Title" content="#000" />
+<meta name="color:Title Hover" content="#f00" />
+<meta name="color:Link Background" content="#000" />
+<meta name="color:Link Text" content="#fff" />
+<meta name="color:Link Background Hover" content="#fff" />
+<meta name="color:Link Text Hover" content="000" />
+<meta name="color:Body Links" content="#f00" />
+<meta name="color:Body Links Hover" content="#aaa" />
+
+<meta name="if:Show Tags" content ="1" />
+
+<meta name="text:Link One URL" content="" />
+<meta name="text:Link One Title" content="" />
+<meta name="text:Link Two URL" content="" />
+<meta name="text:Link Two Title" content="" />
+<meta name="text:Link Three URL" content="" />
+<meta name="text:Link Three Title" content="" />
+<meta name="text:Link Four URL" content="" />
+<meta name="text:Link Four Title" content="" />
+<meta name="text:Link Five URL" content="" />
+<meta name="text:Link Five Title" content="" />
+
+<style type="text/css">
+    
+body {
+    background-color: {color:Background};
+    background-image: {image:Background};
+    font-family: Arial;
+    margin: 0;
+}    
+
+body a {
+    color: {color:Body Links};
+    text-decoration: none;
+}
+
+body a:hover {
+    color: {color:Body Links Hover};
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+}
+
+#sidebar {
+    background-color: {color:Sidebar};
+    float: left;
+    height: 100%;
+    padding: 75px;
+    position: fixed;
+    width: 175px;
+}
+
+#sidebar .icon {
+    border-radius: 5px;
+    height: 75px;
+    margin-left: 50px;
+    width: 75px;
+}
+
+#sidebar .icon:hover {
+    opacity: 0.75;
+    transition: all 0.40s ease-in-out;
+}
+
+#sidebar .title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#sidebar .title a {
+    color: {color:Title};
+}
+
+#sidebar .title a:hover {
+    color: {color:Title Hover};
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+}
+
+#sidebar .description {
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 150%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#sidebar .link {
+    font-size: 12px;
+    text-align: center;
+    width: 175px;
+}
+    
+#sidebar .link a {
+    background-color: {color:Link Background};
+    color: {color:Link Text};
+    display: block;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    padding: 7px;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}    
+
+#sidebar .link a:hover {
+    background-color: {color:Link Background Hover};
+    color: {color:Link Text Hover};
+    padding-left: 10px;
+}
+
+#content {
+    margin-left: 400px;
+}
+
+#content blockquote {
+    border-left: 2px solid #000;
+    margin: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 5px;
+}
+
+#content blockquote img {
+    height: 100%;
+    max-width: 100%;
+}
+
+#content #posts {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 500px;
+}
+
+#content #posts .heading {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+#content #posts .body {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#content #posts .quote {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#content #posts .source {
+    font-size: 15px;
+    font-weight: 900;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+#content #posts .url {
+    background-color: {color:Link Background};
+    color: {color:Link Text};
+    display: block;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 460px;
+}
+
+#content #posts .url:hover {
+    background-color: {color:Link Background Hover};
+    color: {color:Link Text Hover};
+}
+
+#content #posts .chat {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#content #posts .tags {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#content #posts .tags a {
+    color: #000;
+}
+    
+</style>
+</head>
+<body>
+<div id="sidebar">
+<div class="title"><a href="/">{Title}</a></div><!---sidebar/Title--->   
+<div class="description">{Description}</div><!---sidebar/Description--->
+<div class="links">
+<div class="linktitle"><strong>{text:Link Title}</strong></div>
+
+{block:ifLinkOneTitle}<div class="link"><a href="{text:Link One URL}">{text:Link One Title}</a></div>{/block:ifLinkOneTitle}
+
+{block:ifLinkTwoTitle}<div class="link"><a href="{text:Link Two URL}">{text:Link Two Title}</a></div>{/block:ifLinkTwoTitle}
+
+{block:ifLinkThreeTitle}<div class="link"><a href="{text:Link Three URL}">{text:Link Three Title}</a></div>{/block:ifLinkThreeTitle}
+
+{block:ifLinkFourTitle}<div class="link"><a href="{text:Link Four URL}">{text:Link Four Title}</a></div>{/block:ifLinkFourTitle}
+
+{block:ifLinkFiveTitle}<div class="link"><a href="{text:Link Five URL}">{text:Link Five Title}</a></div>{/block:ifLinkFiveTitle}
+
+{block:ifLinkSixTitle}<div class="link"><a href="{text:Link Six URL}">{text:Link Six Title}</a></div>{/block:ifLinkSixTitle}
+
+{block:ifLinkSevenTitle}<div class="link"><a href="{text:Link Seven URL}">{text:Link Seven Title}</a></div>{/block:ifLinkSevenTitle}
+
+{block:ifLinkEightTitle}<div class="link"><a href="{text:Link Eight URL}">{text:Link Eight Title}</a></div>{/block:ifLinkEightTitle}
+
+{block:ifLinkNineTitle}<div class="link"><a href="{text:Link Nine URL}">{text:Link Nine Title}</a></div>{/block:ifLinkNineTitle}
+
+{block:ifLinkTenTitle}<div class="link"><a href="{text:Link Ten URL}">{text:Link Ten Title}</a></div>{/block:ifLinkTenTitle}
+    
+</div><!---Sidebar/Links--->
+
+</div><!---Sidebar--->
+
+
+<div id="content">
+{block:Posts}
+<div id="posts">
+    
+{block:Text}
+    {block:Title}
+        <div class="heading">{Title}</div>
+    {/block:Title}
+    <div class="body">{Body}</div>
+{/block:Text}
+
+{block:Photo}
+    {LinkOpenTag}
+        <img src="{PhotoURL-500}" />
+    {LinkCloseTag}
+    {block:Caption}
+        <div class="body">{Caption}</div>
+    {/block:Caption}
+{/block:Photo}
+
+{block:Panorama}
+    {LinkOpenTag}
+        <img src="{PhotoURL-500}" />
+    {LinkCloseTag}
+    {block:Caption}
+        <div class="body">{Caption}</div>
+    {/block:Caption}
+{/block:Panorama}
+
+{block:Photoset}
+    {Photoset-500}
+    {block:Caption}
+        <div class="body">{Caption}</div>
+    {/block:Caption}
+{/block:Photoset}
+
+{block:Quote}
+    <div class="quote">"{Quote}"</div>
+    {block:Source}
+        <div class="source">— {Source}</div>
+    {/block:Source}
+{/block:Quote}
+
+{block:Link}
+    <a class="url" href="{URL}" title="{URL}">{Name}</a>
+    {block:Description}
+        <div class="body">{Description}</div>
+    {/block:Description}
+{/block:Link}
+
+{block:Chat}
+    {block:Title}
+        <div class="heading">{Title}</div>
+    {/block:Title}
+    {block:Lines}
+       <div class="chat">
+        {block:Label}
+            <strong>{Label}</strong>
+        {block:Label}
+            {Line}
+        </div>
+    {/block:Lines}
+{/block:Chat}
+
+{block:Audio}
+{/block:Audio}
+
+{block:Video}
+    {Video-500}
+    {block:Caption}
+        <div class="body">
+            {Caption}
+        </div>
+    {/block:Caption}
+{/block:Video}
+
+{block:Answer}
+{/block:Answer}
+
+{block:ifShowTags}
+{block:HasTags}
+    {block:Tags}
+        <div class="tags">
+            <a href="{TagURL}">#{Tag}</a>
+        </div>
+    {/block:Tags}
+{/block:HasTags}
+{/block:ifShowTags}
+
+</div><!--- END / Posts --->
+{/block:Posts}
+</div><!--- END / Content --->
+</body>
+</html>
