@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Cristy Wei</title>
-<link rel="icon" type="image/x-icon" href="img/test.gif">
+<link rel="icon" href="img/test.gif">
 
 <style type="text/css">
 
@@ -19,16 +19,15 @@ body {
 }
 
 a {
-    background-color: #1A936F;
-    color: #f6f6f6;
-    margin: 5px;
-    padding: 5px;
+    background-color: #88D0A1;
+    color: #000;
     text-decoration: none;
 }
 
 a:hover {
-    color: #020230;
-    transition: 0.25s color ease-out;
+    background-color: #57A773;
+    text-transform: italic;
+    transition: 0.5s background-color ease-out;
 }
 
 ul {
@@ -50,6 +49,19 @@ ul {
     padding: 20px 50px 20px; 
 }
 
+#header a {
+    background-color: #1A936F;
+    color: #f6f6f6;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#header a:hover {
+    color: #020230;
+    transition: 0.25s color ease-out;
+}
+
 #about {
     font-size: 15px;
     font-weight: 700;
@@ -60,8 +72,16 @@ ul {
 #projects {
     background-color: #DCDDFF;
     color: #000;
+    font-weight: 200;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 20px 125px 20px;
+    text-align: left;
+}
+
+#projects .project {
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 700;
 }
 
 #resume {
@@ -71,6 +91,7 @@ ul {
 }
 
 #resume .position {
+    font-size: 17px;
     font-style: italic;
 }
 
@@ -101,11 +122,15 @@ ul {
 
 <div id="projects">
     <div class="title">Projects</div><br>
-    my projects go here
+        <div class="project">Human-Chess Engine Interaction – <a href="https://scholarship.claremont.edu/cmc_theses/3124/l">Scholarship @ Claremont</a></div>
+        An examination of how modern-day chess engines have changed the landscape of player self-analysis. Aims to explore the impact of chess engines on player strategies and accuracy by modeling grandmaster centipawn loss over time. Also provides an overview on the development of chess engines, from its roots in WWII crytography to the current era of computer science, and addresses efforts to cull cheating in chess in association with engine use. (Access to the full thesis is restricted; shoot me an email if you would like a copy!) <br><br>
+    
+    <div class="project">Mastermind in the Terminal – <a href="https://github.com/cristywei/mastermind-cs5-final">Github</a></div>
+    This project served as the capstone of HMC's CS 5 course. It allows the user to play the game <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)">Mastermind</a> in the terminal against a computer AI. Both roles are available for the player to choose from. As a "codemaker," the AI is able to respond to human input, allowing the player to know the accuracy of their guesses. As the "codebreaker," the AI is able to keep track of previous guesses, and actively adjusts its guesses depending on player responses. As the code is stored within the game, the AI is also able to prevent cheating and will reject human responses when lying about the accuracy of a guess, although it will otherwise continue to play as if it doesn't know the code.<br><br>
 </div>
 
 <div id="resume">
-    <div class="title">Resume</div><br>
+    <div class="title">Experiences</div><br>
     <div class="position">Engineer Intern, Samba TV</div>
     June 2022 – August 2022
         <ul>
